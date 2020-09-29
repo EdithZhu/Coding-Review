@@ -1,0 +1,13 @@
+import java.util.*; 
+import java.time.LocalDateTime;
+public class addSecondsToDate {
+    public static void main(String[] args) {
+        LocalDateTime datetime= LocalDateTime.now();//create data using java 8 LocalDateTime
+        System.out.println("Before: "+datetime);
+        int n = 30;
+        datetime=datetime.plusSeconds(n);//add seconds by using plusSeconds(seconds) method
+        System.out.println("After: "+datetime);
+    }
+}
+//Before: 2020-09-29T19:41:58.880
+//After: 2020-09-29T19:42:28.880
