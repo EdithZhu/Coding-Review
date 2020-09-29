@@ -1,0 +1,14 @@
+import java.util.*; 
+import java.util.stream.*;
+public class Solution { 
+    public static void main(String args[]) { 
+        int[] arr = new int[]{1,2,3};
+        IntStream st1 = Arrays.stream(arr);
+        st1.forEach(s -> System.out.print(s+ " ")); 
+        System.out.println("");
+        IntStream st2 = IntStream.of(arr);
+        st2.forEach(s -> System.out.print(s+ " ")); 
+    } 
+} 
+//1 2 3
+//1 2 3
