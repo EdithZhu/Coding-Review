@@ -1,0 +1,16 @@
+import java.io.*;  
+import java.util.Scanner;  
+public class ReadLineByLineExample2  {  
+    public static void main(String args[])  { 
+        try {  
+            FileInputStream fis=new FileInputStream("Demo.txt"); //the file
+            Scanner sc=new Scanner(fis);    //file to be scanned  
+            while(sc.hasNextLine()){  //returns true if there is another line to read 
+                System.out.println(sc.nextLine()); //returns the line that was skipped  
+            }
+            sc.close();     //closes the scanner  
+        }  catch(IOException e) {  
+            e.printStackTrace();  
+        }  
+    }  
+}  
