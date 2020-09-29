@@ -1,0 +1,20 @@
+import java.util.*; 
+import java.util.stream.*; 
+import java.util.HashSet; 
+public class TreeSetDemo{ 
+    public static void main(String args[]) {
+        Set<Integer> set = new TreeSet<Integer>();//create TreeSet object
+        set.add(1);//add elements to TreeSet
+        set.add(2);
+        int len = set.size();
+        int[] res = new int[len];
+        Iterator it = set.iterator();
+        int index = 0;
+        while (it.hasNext()) {
+            res[index] = (int) it.next();
+            index++;
+        }
+        System.out.println(Arrays.toString(res));
+    }
+}
+//output: [1, 2]
