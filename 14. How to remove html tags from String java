@@ -1,0 +1,15 @@
+import java.util.*; 
+public class RemoveHTMLTagsTest {
+    public static void main(String[] args) {
+      String str = "<p><b>Welcome to Tutorials Point</b></p>";
+      System.out.println("Before removing HTML Tags: " + str);
+      str = str.replaceAll("\\<.*?\\>", "");
+      System.out.println("After removing HTML Tags: " + str);
+      
+      String str1 = "Love you, <p><b>Welcome to Tutorials Point</b></p>";//appraoch 2
+      String[] arr = str1.split("<\\S+>");
+      StringBuffer sb = new StringBuffer();
+      for (String s : arr) sb.append(s);
+      System.out.println("After removing HTML Tags: " + sb.toString());
+    }
+} 
