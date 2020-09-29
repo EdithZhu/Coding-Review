@@ -1,0 +1,28 @@
+import java.io.File; 
+public class GFG { 
+	static void RecursivePrint(File[] arr, int level) {
+		for (File f : arr) {// for-each loop for main directory files 
+			for (int i = 0; i < level; i++) // tabs for internal levels 
+				System.out.print("\t"); 
+			if(f.isFile()) 
+				System.out.println(f.getName()); 
+			else if(f.isDirectory()) { 
+				System.out.println("[" + f.getName() + "]"); 
+				RecursivePrint(f.listFiles(), level + 1); // recursion for sub-directories 
+			} 
+		} 
+	} 
+	public static void main(String[] args) { 
+		// Provide full path for directory(change accordingly) 
+		String maindirpath = "C:\\Users\\Gaurav Miglani\\Desktop\\Test"; 
+		File maindir = new File(maindirpath); // File object 
+		if(maindir.exists() && maindir.isDirectory()) { 
+			// array for files and sub-directories of directory pointed by maindir 
+			File arr[] = maindir.listFiles(); 
+			System.out.println("**********************************************"); 
+			System.out.println("Files from main directory : " + maindir); 
+			System.out.println("**********************************************"); 
+			RecursivePrint(arr, 0); // Calling recursive method
+		} 
+	} 
+} 
