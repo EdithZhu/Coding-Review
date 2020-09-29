@@ -1,1 +1,36 @@
+import java.util.*;
+public class Employee implements Comparable<Employee>{ 
+    String name;
+    int id;
+    Employee (String name, int id){//constructor
+        this.name=name;
+        this.id=id;
+    }
+    public String getName() {return name;}//getter & setter
+    public void setName(String name) {this.name = name;}
+    public int getId() {return id;}
+    public void setId(int id) {this.id = id;}
+    @Override 
+    public String toString() {//toString
+        return ("Name: " + this.name + ", ID: " + this.id);
+    }
+    @Override    
+    public int compareTo(Employee obj) {
+        if (this.getId() < obj.getId()) return 1;
+        else if (this.getId() > obj.getId()) return -1;
+        else return 0;
+    }
+    
+    public static void main(String args[]) {
+        Set<Employee> set = new TreeSet<Employee>();//create TreeSet object     
+        set.add(new Employee("abc",1));//add elements to TreeSet
+        set.add(new Employee("def",2));
+        set.add(new Employee("ghi",3));
+        set.add(new Employee("jkl",4));
+        Iterator itr = set.iterator();
+        while(itr.hasNext()){
+            System.out.println((Employee)itr.next());
+        } 
+    }
+}
 
