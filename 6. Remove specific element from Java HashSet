@@ -1,0 +1,18 @@
+import java.util.*; 
+import java.util.HashSet; 
+public class Solution { 
+    public static void main(String args[]) 
+    { 
+        // Creating an empty HashSet 
+        HashSet<String> set = new HashSet<String>(); 
+        // Use add() method to add elements into the Set 
+        set.add("YUE"); 
+        set.add("ZHU"); 
+        // Displaying the HashSet 
+        System.out.println("HashSet: " + set); 
+        // Removing elements using remove() method 
+        set.remove("YUE"); 
+        // Displaying the HashSet after removal 
+        System.out.println("HashSet after removing elements: " + set); 
+    } 
+} 
