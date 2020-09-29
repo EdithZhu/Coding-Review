@@ -1,0 +1,12 @@
+import java.util.*;
+import java.util.stream.*;
+public class Solution {
+    public static void main(String[] args) {
+        HashMap<Integer,Integer> map = new HashMap<>();
+        map.put(1,2);
+        map.put(3,4);
+        Stream<Map.Entry<Integer, Integer>> st = map.entrySet().stream();
+        System.out.println(Arrays.toString(st.toArray()));
+    }
+}
+//[1=2, 3=4]
