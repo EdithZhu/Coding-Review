@@ -1,0 +1,12 @@
+import java.util.*; 
+import java.util.stream.*;
+public class GFG { 
+	public static void main(String[] args) { 
+	    Set<Integer> set = new HashSet<>(); //Creating Integer HashSet
+	    set.add(1); 	// adding elements in set
+	    set.add(2); 
+	    Stream<Integer> st = set.stream();// converting Set to Stream
+	    st.forEach(x->System.out.print(x+" ")); 
+	} 
+} 
+//1 2 
