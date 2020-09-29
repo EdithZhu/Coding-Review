@@ -1,0 +1,12 @@
+import java.util.*; 
+import java.util.TreeSet; 
+public class Solution { 
+    public static void main(String args[]) { 
+        TreeSet<Integer> set = new TreeSet<>(); // Creating an empty HashSet 
+        set.add(4); // Use add() method to add elements into the Set 
+        set.add(1);
+        // Displaying the max, min
+        System.out.println("Min: " + set.first());
+        System.out.println("Max: " + set.last()); 
+    } 
+}
