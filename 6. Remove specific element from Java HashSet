@@ -16,3 +16,5 @@ public class Solution {
         System.out.println("HashSet after removing elements: " + set); 
     } 
 } 
+//output: HashSet: [ZHU, YUE]
+//        HashSet after removing elements: [ZHU]
