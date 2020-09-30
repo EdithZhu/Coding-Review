@@ -1,0 +1,18 @@
+public class Solution{
+     public static void main(String []args){
+         int example = 7;
+        //method 1:check ones place
+        String exampleStr = example+"";
+        int ones = (int)exampleStr.charAt(exampleStr.length()-1);
+        int[] arr = new int[]{0,2,4,6,8};
+        boolean flag = false;
+        for(int i=0;i<arr.length;i++) {
+            if (ones == arr[i])
+            flag = true;
+        }
+        System.out.println("Is 7 odd or even? " + (flag==true ? "even" : "odd"));
+        //method 2:bit
+        int flag1 = example & 1;//odd:flag1 == 1; even:flag1 == 0
+        System.out.println("Is 7 odd or even? " + (flag1==0 ? "even" : "odd"));
+     }
+}
