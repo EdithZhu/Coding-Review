@@ -1,0 +1,26 @@
+import java.util.*;
+import java.util.stream.*;
+public class Solution {
+    public static void main(String[] args) {
+        ArrayList<String> lst = new ArrayList<>();
+        lst.add("abc");
+        lst.add("ABC");
+        lst.add("bcd");
+        //method 1: search by index
+        String str = "abc";
+        String ans = lst.indexOf(str)==-1 ? "no" : "yes";
+        System.out.println("'abc' in the list or not? " + ans);
+        //method 2: search by value
+        for (String s: lst) {
+            if (s.equals(str))
+            System.out.println("'abc' is in the list");
+            else {
+                System.out.println("'abc' is NOT in the list");
+                break;
+            }
+        }
+    }
+}
+//'abc' in the list or not? yes
+//'abc' is in the list
+//'abc' is NOT in the list
