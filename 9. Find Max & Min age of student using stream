@@ -17,14 +17,20 @@ public class Student{
 	    Student st2 = new Student("zhu", 20);
 	    Student st3 = new Student("he", 25);
 		List<Student> sts = Arrays.asList(st1,st2,st3);
-		//sort
+		//method 1 - sort
 		List<Student> lst = sts.stream()
                 .sorted(Comparator.comparing(Student::getAge))
                 .collect(Collectors.toList());
 		System.out.println("Min: " + lst.get(0));
 		System.out.println("Max: " + lst.get(lst.size()-1));
+		//method 2 - minBy/maxBy
+		Student minSt = sts.stream().collect(Collectors.minBy(
+						    Comparator.comparingInt(Student::getAge))).get();
+		Student maxSt = sts.stream().collect(Collectors.maxBy(
+						    Comparator.comparingInt(Student::getAge))).get();
+		System.out.println("Min: " + minSt);
+		System.out.println("Max: " + maxSt);				   
 	}
 }
-//
 //Min: zhu: 20
 //Max: he: 25
