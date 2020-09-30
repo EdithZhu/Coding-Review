@@ -1,0 +1,13 @@
+import java.util.*;
+import java.util.stream.*;
+public class Solution {
+    public static void main(String[] args) {
+        ArrayList<String> lst = new ArrayList<>();
+        lst.add("abc");
+        lst.add("ABC");
+        lst.add("bcd");
+        Collections.sort(lst);
+        System.out.println(Arrays.toString(lst.toArray()));
+    }
+}
+//[ABC, abc, bcd]
