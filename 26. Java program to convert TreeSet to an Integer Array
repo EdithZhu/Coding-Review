@@ -1,0 +1,14 @@
+import java.util.*;
+import java.util.stream.*;
+public class Solution {
+    public static void main(String[] args) {
+        TreeSet<Integer> set = new TreeSet<>();
+        set.add(1);
+        set.add(2);
+        set.add(3);
+        ArrayList<Integer> lst = new ArrayList(set);
+        int[] arr = lst.stream().mapToInt(x -> x).toArray();
+        System.out.println(Arrays.toString(arr));
+    }
+}
+//[1, 2, 3]
