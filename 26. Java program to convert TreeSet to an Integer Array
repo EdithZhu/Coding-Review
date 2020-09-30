@@ -7,8 +7,13 @@ public class Solution {
         set.add(2);
         set.add(3);
         ArrayList<Integer> lst = new ArrayList(set);
-        int[] arr = lst.stream().mapToInt(x -> x).toArray();
+        Integer[] arr = set.stream().toArray(Integer[]::new);//method 1
+        //int[] arr3 = lst.stream().mapToInt(x -> x).toArray();//int[]
         System.out.println(Arrays.toString(arr));
+        
+        Integer[] arr1 = lst.toArray(new Integer[lst.size()]);//method 2
+        System.out.println(Arrays.toString(arr1));
     }
 }
+//[1, 2, 3]
 //[1, 2, 3]
