@@ -1,0 +1,23 @@
+import java.util.*;
+import java.util.stream.*;
+public class Solution{ 
+    public static void main(String args[]) { //find all the duplicate in a string
+        ArrayList<Integer> lst = new ArrayList<>();
+        lst.add(1);
+        lst.add(2);
+        lst.add(2);
+        lst.add(3);
+        lst.add(3);
+        lst.add(3);
+        System.out.println("Before: " + Arrays.toString(lst.toArray()));
+        for (int i=1;i<lst.size();i++) {
+            for (int j=0;j<i;j++) {
+                if (lst.get(i).equals(lst.get(j))) {
+                    lst.remove(i);
+                    i--;
+                }
+            }
+        }
+        System.out.println("After: " + Arrays.toString(lst.toArray()));
+    }
+}
