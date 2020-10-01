@@ -18,3 +18,16 @@ public class TreeSetDemo{
     }
 }
 //output: [1, 2]
+
+
+//method 2
+import jdk.internal.net.http.frame.ResetFrame;
+public class Solution{ 
+    public static void main(String args[]) { //find all the duplicate in a string
+        TreeSet<Integer> set = new TreeSet<>();
+        set.add(1);
+        set.add(2);
+        int[] res =  set.stream().mapToInt(t -> t).toArray();
+        System.out.println("Result: " + Arrays.toString(res));
+    }
+}
