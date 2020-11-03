@@ -1,0 +1,11 @@
+import java.util.*;
+import java.util.stream.*;
+public class Solution{
+    public static void main(String []args){
+        List<Integer> integers = Arrays.asList(1, 2, 3, 4, 5);
+        //method 1: Stream.collect()
+        Integer sum1 = integers.stream().collect(Collectors.summingInt(Integer::intValue));
+        //method 2: IntStream.sum()
+        Integer sum2 = integers.stream().mapToInt(Integer::intValue).sum();
+    }
+}
