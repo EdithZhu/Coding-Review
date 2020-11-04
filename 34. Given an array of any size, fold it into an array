@@ -1,0 +1,30 @@
+import java.util.*;
+import java.util.stream.*;
+public class Solution {
+    private static int[] fold(int[] arr,int count){
+        List<Integer> lst = new ArrayList<>();
+        for (int num : arr) { lst.add(num); }
+        List<Integer> res = new ArrayList<>();
+        while (count != 0) {
+            count--;
+            int size = lst.size();
+            int len = size % 2 == 0 ? size / 2 : size / 2 + 1;
+            for(int i=0;i<len;i++) {
+                if (i == size-1-i) res.add(lst.get(i));
+                else res.add(lst.get(i) + lst.get(size-1-i));
+            }
+            lst = res;
+            res = new ArrayList<>();
+        }
+        return lst.stream().mapToInt(x->x).toArray();
+    }
+    public static void main(String arg[]) {
+        int[] arr = {1,2,3,30,40,50,60};
+        System.out.println(Arrays.toString(fold(arr,1)));
+        System.out.println(Arrays.toString(fold(arr,2)));
+        System.out.println(Arrays.toString(fold(arr,5)));
+    }
+}
+//[61, 52, 43, 30]
+//[91, 95]
+//[186]
