@@ -1,0 +1,26 @@
+import java.util.*;
+import java.util.stream.*;
+public class Solution {
+    public static void main(String arg[]) {
+        String[] arr = {"abcd","adbc","acbd","efgh","egfh","lmno","dbca","omnl"};
+        List<String> lst = new ArrayList<>();
+        Map<String, Integer> map = new HashMap<>();
+        for (int i=0;i<arr.length;i++) {
+            char[] chars = arr[i].toCharArray();
+            Arrays.sort(chars);
+            String newStr = String.valueOf(chars);
+            if (map.containsKey(newStr)) {
+                arr[i] = "*";
+            }
+            map.put(newStr, map.getOrDefault(newStr,0) + 1);
+        }
+        for (String str : arr) {
+            if ( !str.equals("*")){
+                lst.add(str);
+            }
+        }
+        System.out.println(Arrays.toString(lst.toArray()));
+    }
+}
+
+//[abcd, efgh, lmno]
