@@ -1,0 +1,19 @@
+import java.util.*;
+public class Solution {
+    public static void main(String arg[]) {
+        int[] arr= {4,1,5,6};
+        TreeSet<Integer> set = new TreeSet<>();
+        for (int num : arr) {
+            set.add(num);
+        }
+        Integer min = set.first();
+        Integer max = set.last();
+        for (int i=min;i<=max;i++) {
+            if ( !set.contains(i)){
+                System.out.println(i);
+            }
+        }
+    }
+}
+//2
+//3
