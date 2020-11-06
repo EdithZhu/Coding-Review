@@ -1,0 +1,31 @@
+import java.util.*;
+import java.util.stream.*;
+public class Solution{
+    //method 1
+    private static boolean isMonoString(String str) {
+        if (str == null || str.length() == 0) return false;
+        String[] arr1 = str.split("[a-zA-Z]");
+        String[] arr2 = str.split("[0-9]");
+        if (arr1.length == 0 || arr2.length == 0) return true;
+        else return false;
+    }
+    //method 2
+    private static boolean isMono(String str) {
+        if (str == null || str.length() == 0) return false;
+        for (char cha : str.toCharArray()) {
+            if ((Character.isLetterOrDigit(s.charAt(i)) == false))
+            return false;
+        }
+        return true;
+    }
+    public static void main(String []args){
+        String str1 = "aabbcdeiouccAAA";
+        String str2 = "1290438";
+        String str3 = "adfa3242";
+        String str4 = "ad.fa3242";
+        System.out.println(str1 + " is letter/digit String: " + isMonoString(str1));
+        System.out.println(str2 + " is letter/digit String: " + isMonoString(str2));
+        System.out.println(str3 + " is letter/digit String: " + isMonoString(str3));
+        System.out.println(str4 + " is letter/digit String: " + isMonoString(str4));
+    }
+}
